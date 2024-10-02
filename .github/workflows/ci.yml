@@ -23,16 +23,15 @@ jobs:
         with:
           xcode-version: '14.3.1'  # Use Xcode 14.3.1, an available version
 
-      # Step 3: Build the project with xcodeproj
+      # Step 3: Build the project using xcodeproj
       - name: Build with xcodebuild
         run: |
-          xcodebuild clean build \
-            -project BrickBreaker.xcodeproj \  # Use .xcodeproj instead of .xcworkspace
-            -scheme BrickBreaker \
+          xcodebuild clean archive \
+            -project BrickBreaker.xcodeproj \  # Use .xcodeproj for the project
+            -scheme BrickBreaker \             # Ensure this matches your Xcode scheme
             -sdk iphoneos \
             -configuration Release \
-            -archivePath $PWD/build/BrickBreaker.xcarchive \
-            archive
+            -archivePath $PWD/build/BrickBreaker.xcarchive
 
       # Step 4: Export the .ipa
       - name: Export .ipa
