@@ -17,11 +17,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      # Step 2: Set up Xcode and install dependencies
+      # Step 2: Set up Xcode environment with available version
       - name: Set up Xcode environment
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '14.0'  # Specify the Xcode version you want to use
+          xcode-version: '14.3.1'  # Updated to 14.3.1, an available version
 
       # Step 3: Install CocoaPods dependencies if applicable
       - name: Install CocoaPods dependencies
