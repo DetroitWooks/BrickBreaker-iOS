@@ -47,9 +47,9 @@ jobs:
             -exportPath $PWD/build \
             -exportOptionsPlist ExportOptions.plist
 
-      # Step 6: Upload the IPA as an artifact for download
+      # Step 6: Upload the IPA for download using the new v3 version
       - name: Upload IPA for download
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3  # Updated to v3
         with:
           name: BrickBreaker.ipa
           path: build/*.ipa
