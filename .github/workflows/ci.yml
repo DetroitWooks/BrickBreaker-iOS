@@ -23,10 +23,7 @@ jobs:
         with:
           xcode-version: '14.3.1'  # Updated to 14.3.1, an available version
 
-      # Step 3: Install CocoaPods dependencies if applicable
-      - name: Install CocoaPods dependencies
-        run: |
-          pod install
+      
 
       # Step 4: Build the project
       - name: Build with xcodebuild
